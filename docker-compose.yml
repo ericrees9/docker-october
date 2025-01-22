@@ -60,6 +60,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.wordpress
+      args:
+        THEME_NAME: "${CONTAINER_NAME}"
     restart: unless-stopped
     env_file: .env
     environment:
