@@ -2,18 +2,3 @@ ARG THEME_NAME
 
 # Install composer dependencies
 FROM wordpress:6.5.2-fpm-alpine
-
-RUN apk add --no-cache curl php81-cli php81-phar php81-openssl
-
-# Install Composer
-RUN curl -sS https://getcomposer.org/installer \
-    | php -- --install-dir=/usr/local/bin --filename=composer
-
-
-# Install Node from Alphine    
-FROM wordpress:6.5.2-fpm-alpine
-
-RUN apk add --no-cache nodejs npm
-
-# Install Parcel
-RUN npm install -g parcel
